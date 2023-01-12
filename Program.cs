@@ -6,14 +6,15 @@ bool isDone = false;
 
 
 do
-{ 
-    
+{
+
     Console.WriteLine($"Parkingtime : {PrintParkingTime()}");
     Console.Write("Your Input: ");
     string input = Console.ReadLine()!;
-   
+
     counter++;
     isDone = EnterCoins(input, counter);
+    
 } while (!isDone);
 
 bool EnterCoins(string input, int counter)
@@ -32,11 +33,11 @@ bool EnterCoins(string input, int counter)
         }
     else
     {
-       
+
         AddParkingTime(input);
         if (time >= 130)
         {
-         
+
             Console.WriteLine(PrintParkingTime());
             PrintDonation();
             return true;
@@ -65,18 +66,18 @@ int AddParkingTime(string input)
 
 string PrintParkingTime()
 {
-    
+
     int hours = time / 60;
     if (hours > 1)
-  
+
         return $"You'r allowed to park 01:30 hours";
     else
- 
+
         return $"{hours}:{time - (hours * 60)}";
 }
 
 void PrintDonation()
 {
-   double donation = Convert.ToDouble(time / 60.00 - 1.50);
+    double donation = Convert.ToDouble(time / 60.00 - 1.50);
     Console.WriteLine($"Thank you for your donation of {donation:f2} €!");
 }
