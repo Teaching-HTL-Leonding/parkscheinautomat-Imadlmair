@@ -14,7 +14,7 @@ do
 
     counter++;
     isDone = EnterCoins(input, counter);
-    
+
 } while (!isDone);
 
 bool EnterCoins(string input, int counter)
